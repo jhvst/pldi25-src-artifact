@@ -1,0 +1,10 @@
+[package]
+name = "pldi25-src-artifact"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ocaml = "*"
+
+[build-dependencies]
+ocaml-build = {version = "*", features=["dune"]}
