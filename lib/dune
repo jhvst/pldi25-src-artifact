@@ -1,0 +1,9 @@
+(executable
+ (name pldi25-src-artifact)
+ (public_name pldi25-src-artifact)
+  (flags (:standard -cclib -static))
+  (libraries fstar.lib)
+ (modes exe object))
+ (env
+  (_
+    (flags (:standard -w -A))))
