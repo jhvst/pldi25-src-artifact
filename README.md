@@ -11,5 +11,27 @@ Elaborations:
 
 ## How-to
 
-To produce Rust source code from Pulse, you need the Pulse2Rust tool.
-The version used in this demo is pinned in this PR: https://github.com/FStarLang/pulse/pull/264
+Software versions used in this demo is pinned in this PR: https://github.com/FStarLang/pulse/pull/264
+
+### OCaml codegen
+
+Requires Pulse.
+
+Install with Nix: `nix shell "github:FStarLang/pulse?ref=pull/264/head#pulse-exe"`.
+A binary called `pulse.exe` should now be in your path.
+
+Then, within `lib` folder:
+
+`pulse.exe Lang.fst --odir . --codegen OCaml --ext pulse:extract_ocaml_bare --extract 'Lang'`
+
+You now have generated the OCaml file.
+
+The FFI stubs must be declared manually, look for `lib` for an example.
+
+### Rust codegen
+
+1. `pulse.exe Pad.fst --odir . --codegen Extension --extract 'Pad'`
+2. `nix shell "github:FStarLang/pulse?ref=pull/264/head#pulse2rust" -- -odir ../src Pad.ast`
+
+You have now generated Rust source code.
+You will need to finalize the FFI bridge in `src` directory manually.
