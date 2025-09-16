@@ -1,6 +1,6 @@
 (lang dune 3.18)
 
-(name pldi25-src-artifact)
+(name pldi25_src_artifact)
 
 (generate_opam_files false)
 
@@ -16,7 +16,7 @@
 (documentation https://url/to/documentation)
 
 (package
- (name pldi25-src-artifact)
+ (name pldi25_src_artifact)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends ocaml dune)
